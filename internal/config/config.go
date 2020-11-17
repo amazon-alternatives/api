@@ -8,10 +8,16 @@ import (
 	"gorm.io/gorm"
 )
 
+// DB represents the global database connexion
 var DB *gorm.DB
-var Port string
-var DatabaseUrl string
 
+// Port is the port used to access the API
+var Port string
+
+// DatabaseURL is the database connexion url
+var DatabaseURL string
+
+// LoadConfig initializes the environment variables
 func LoadConfig() {
 	err := godotenv.Load()
 	if err != nil {
@@ -19,5 +25,5 @@ func LoadConfig() {
 	}
 
 	Port = ":" + os.Getenv("PORT")
-	DatabaseUrl = os.Getenv("DATABASE_URL")
+	DatabaseURL = os.Getenv("DATABASE_URL")
 }

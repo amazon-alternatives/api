@@ -4,21 +4,13 @@ import (
 	"time"
 )
 
+// Product entity describes the different identificators of an ASIN number
 type Product struct {
-	ID         int       `json:"id"`
-	CategoryID int       `json:"category_id"`
-	Asin       string    `json:"asin"`
-	Gtin       string    `json:"gtin"`
-	Title      string    `json:"title"`
-	Url        string    `json:"url"`
-	CreatedAt  time.Time `json:"created_at"`
-	UpdatedAt  time.Time `json:"updated_at,omitempty"`
-}
-
-type PostProductRequest struct {
-	Category string  `json:"category" validate:"required"`
-	Asin     string  `json:"asin" validate:"required"`
-	Gtin     *string `json:"gtin"`
-	Title    string  `json:"title" validate:"required"`
-	Url      string  `json:"url" validate:"required"`
+	Asin      string    `json:"asin"`
+	Isbn      string    `json:"isbn"`
+	Ean       string    `json:"ean"`
+	Gtin      string    `json:"gtin"`
+	Upc       string    `json:"upc"`
+	CreatedAt time.Time `json:"created_at"`
+	UpdatedAt time.Time `json:"updated_at,omitempty"`
 }
